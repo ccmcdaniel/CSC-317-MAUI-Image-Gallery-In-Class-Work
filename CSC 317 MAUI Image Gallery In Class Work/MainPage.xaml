@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CSC_317_MAUI_Image_Gallery_In_Class_Work.MainPage">
+
+    <ScrollView>
+        
+        <!--Define a grid to arrange the gallery view.
+            This grid will have 3 rows and 1 column.
+            Row 1 will have the thumbnails
+            Row 2 will have the current displayed image
+            Row 3 will have the forward and back buttons.
+            Rows 1 and 3 will have a static size while Row 2
+                will auto adjust.
+        
+        -->
+        <Grid
+            RowDefinitions="100, *, 80"
+            ColumnDefinitions="*"
+            Margin="20">
+
+            <Rectangle Grid.Row="0" BackgroundColor="#333333"/>
+
+            <HorizontalStackLayout Spacing="10" Padding="10" Grid.Row="0">
+                <!--display a set of images of 60 height for the thumbnails.-->
+                <Image MaximumHeightRequest="60" Source="https://pbs.twimg.com/media/CwYxXteUkAAkHaw.jpg" />
+                <Image MaximumHeightRequest="60" Source="https://pbs.twimg.com/media/CwYxXteUkAAkHaw.jpg" />
+                <Image MaximumHeightRequest="60" Source="https://pbs.twimg.com/media/CwYxXteUkAAkHaw.jpg" />
+                <Image MaximumHeightRequest="60" Source="https://pbs.twimg.com/media/CwYxXteUkAAkHaw.jpg" />
+                <Image MaximumHeightRequest="60" Source="https://pbs.twimg.com/media/CwYxXteUkAAkHaw.jpg" />
+                <Image MaximumHeightRequest="60" Source="https://pbs.twimg.com/media/CwYxXteUkAAkHaw.jpg" />
+                <Image MaximumHeightRequest="60" Source="https://pbs.twimg.com/media/CwYxXteUkAAkHaw.jpg" />
+                <Image MaximumHeightRequest="60" Source="https://pbs.twimg.com/media/CwYxXteUkAAkHaw.jpg" />
+                <Image MaximumHeightRequest="60" Source="https://pbs.twimg.com/media/CwYxXteUkAAkHaw.jpg" />
+            </HorizontalStackLayout>
+            
+            <!--This is the image that displays the current selected image-->
+            <Image Grid.Row="1" Margin="20" MaximumHeightRequest="400" Source="https://pbs.twimg.com/media/CwYxXteUkAAkHaw.jpg" />
+
+            <!--Navigation Buttons
+                Note: "&lt;" is an escape character for "<" since it is used
+                      in XAML syntax.  We cannot use it directly, therefore.
+            -->
+            <Button Grid.Row="2" HorizontalOptions="Start" Text="&lt;" />
+            <Button Grid.Row="2"  HorizontalOptions="End" Text=">" />
+
+  
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>
